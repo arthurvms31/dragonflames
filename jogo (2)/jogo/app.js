@@ -201,6 +201,7 @@ function getRandomSafeSpot() {
     })
     allPlayersRef.on("child_added", (snapshot) => {
       const addedPlayer = snapshot.val();
+      console.log(addedPlayer);
       const characterElement = document.createElement("div");
       characterElement.classList.add("Character", "grid-cell");
       if (addedPlayer.id === playerId) {
