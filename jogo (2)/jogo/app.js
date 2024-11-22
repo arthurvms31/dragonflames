@@ -200,8 +200,8 @@ function getRandomSafeSpot() {
       })
     })
     allPlayersRef.on("child_added", (snapshot) => {
+     
       const addedPlayer = snapshot.val();
-      console.log(addedPlayer);
       const characterElement = document.createElement("div");
       characterElement.classList.add("Character", "grid-cell");
       if (addedPlayer.id === playerId) {
@@ -217,7 +217,8 @@ function getRandomSafeSpot() {
         <div class="Character_you-arrow"></div>
       `);
       playerElements[addedPlayer.id] = characterElement;
-    
+
+ 
       characterElement.querySelector(".Character_name").innerText = addedPlayer.name;
       characterElement.querySelector(".Character_coins").innerText = addedPlayer.coins;
       characterElement.setAttribute("data-color", addedPlayer.color);
